@@ -7,7 +7,7 @@ module.exports = function (app) {
 
   app.get('/meta', (req, res) => {
     const url = req.body.url
-
+    console.log(url)
     if (url) {
       if (url === 'test') {
         var response = {}
