@@ -43,6 +43,9 @@ compiler.plugin('compilation', function (compilation) {
   })
 })
 
+// serve dynammic assets
+require('../src/server.js')(app)
+
 // enable hot-reload and state-preserving
 // compilation error display
 app.use(hotMiddleware)
