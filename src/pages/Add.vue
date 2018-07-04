@@ -122,6 +122,10 @@ export default {
   width: 33%;
 }
 
+.add input[type='submit']:hover {
+  background: #fff;
+}
+
 Button.view {
   float: right;
 }
