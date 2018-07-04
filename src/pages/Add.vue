@@ -4,7 +4,7 @@
     <Button @click.native="clearForm()">Clear</Button>
     <a href='/#/view'><Button class='view'>View All 🡺</Button></a>
     <form @submit="submitCitation()">
-      <input type="text" v-model="meta.url" @keyup="getMeta()" placeholder="URL" required>
+      <input type="text" v-model="meta.url" v-on:input="updateUrl" placeholder="URL" required>
       <input type="text" v-model="meta.title" placeholder="Title" required>
       <input type="text" v-model="meta.author" placeholder="Author" required>
       <div class="dates">
@@ -26,6 +26,7 @@
 import MetaFetch from '@/services/MetaFetch.js'
 import LocalCitationStorage from '@/services/LocalCitationStorage.js'
 import Button from '@/components/Button'
+import _ from 'lodash'
 
 export default {
   data () {
@@ -38,6 +39,9 @@ export default {
     Button
   },
   methods: {
+    updateUrl: _.debounce(function () {
+      this.getMeta()
+    }, 500),
     async getMeta () {
       var response = false
       try {
