@@ -5,7 +5,7 @@ module.exports = function (app) {
   app.use(bodyParser.json())
   app.use(cors())
 
-  app.get('/meta', (req, res) => {
+  app.post('/meta', (req, res) => {
     const url = req.body.url
     console.log(url)
     if (url) {
