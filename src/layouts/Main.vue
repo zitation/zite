@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <a href="/#/"><h1>Zite</h1></a>
+      <a href="/#/"><h1>zite</h1></a>
     </header>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Allan|Lato">
     <div id="page_content">
