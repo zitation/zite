@@ -80,10 +80,10 @@ export default {
   font-weight: bold;
 
   border-radius: 2em;
-  border: 0.5em solid #04724d;
+  border-width: 0;
   box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.125);
 
-  padding: 0.5em 1.5em;
+  padding: 0.75em 1.5em;
   margin: 0 0 1em;
 
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -101,6 +101,8 @@ export default {
 
 .add .date {
   display: inline-block;
+  padding: 0;
+  margin: 0;
   width: 49%;
 }
 
@@ -115,7 +117,7 @@ export default {
 .add .date input[type='date'] {
   line-height: 1.5em;
   display: inline-block;
-  width: 90%;
+  width: 95%;
 }
 
 .add input[type='submit'] {
