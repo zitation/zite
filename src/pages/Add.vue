@@ -2,7 +2,7 @@
   <div class="add">
     <h1>Add Citation</h1>
     <Button @click.native="clearForm()">Clear</Button>
-    <a href='/#/view'><Button class='view'>View All 🡺</Button></a>
+    <a href='/#/view' ref='next'><Button class='view'>View All 🡺</Button></a>
     <form @submit="submitCitation()">
       <input type="text" v-model="meta.url" v-on:input="updateUrl" placeholder="URL" required>
       <input type="text" v-model="meta.title" placeholder="Title" required>
