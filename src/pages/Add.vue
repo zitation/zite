@@ -121,11 +121,15 @@ export default {
 }
 
 .add input[type='submit'] {
+  color: #fcf7ff;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  background: rgba(0, 0, 0, 0);
+  border: 0.5em solid #fcf7ff;
   width: 33%;
 }
 
 .add input[type='submit']:hover {
-  background: #fff;
 }
 
 Button.view {
