@@ -18,16 +18,24 @@ module.exports = function (app) {
         res.json(response)
       }
       else {
-        urlMetadata(url).then(
-          function (m) { // success handler
-            console.log(m)
+        urlMetadata(url, {timeout: 5000}).then(
+          function (meta) { // success handler
+            console.log(meta)
+            try {
+              var response = {
+                title: meta['title'] || meta['og:title'],
+                author: meta['author'] || meta['article:author'] || meta['og:article:author'],
+                date_published: meta['article:published_time'] || meta['og:article:published_time']
+              }
 
-            response = {
-              title: m['title'] || m['og:title'] || m[''],
-              author: m['author'] || m['article:author'] || m['og:article:author'],
-              date_published: m['article:published_time'].substring(0, 10) || m['og:article:published_time'].substring(0, 10)
+              if (response.date_published)
+                response.date_published = response.date_published.substring(0, 10)
+
+              res.json(response)
             }
-            res.json(response)
+            catch (e) {
+              console.log(e)
+            }
           },
           function (error) { // failure handler
             console.log(error)
