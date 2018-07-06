@@ -18,7 +18,7 @@ module.exports = function (app) {
         res.json(response)
       }
       else {
-        urlMetadata(url, {timeout: 5000}).then(
+        urlMetadata(url).then(
         function (meta) { // success handler
           try {
             var response = {
