@@ -76,6 +76,10 @@ export default {
 </script>
 
 <style>
+.add form {
+  padding: 1em 0;
+}
+
 .add input {
   font-weight: bold;
 
