@@ -38,7 +38,7 @@ export default {
 
   header #title {
     float: left;
-    font-size: 2em;
+    font-size: 2.5em;
     padding: 0;
     margin: 0;
     color: #fcf7ff;
