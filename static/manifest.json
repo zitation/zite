@@ -3,18 +3,13 @@
   "short_name": "zite",
   "icons": [
     {
-      "src": "/static/img/icons/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/static/img/icons/android-chrome-512x512.png",
-      "sizes": "512x512",
+      "src": "/static/img/icons/icon-256x256.png",
+      "sizes": "256x192",
       "type": "image/png"
     }
   ],
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#4DBA87"
+  "background_color": "#8db38b",
+  "theme_color": "#04724d"
 }
