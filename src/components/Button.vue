@@ -1,5 +1,5 @@
 <template>
-  <button class='button-component' v-bind:class='{inverted, small, dangerous}'>
+  <button class='button-component' v-bind:class='{inverted, small, dangerous, attractive}'>
     <slot></slot>
   </button>
 </template>
@@ -9,7 +9,8 @@ export default {
   props: {
     inverted: Boolean,
     small: Boolean,
-    dangerous: Boolean
+    dangerous: Boolean,
+    attractive: Boolean
   }
 }
 </script>
@@ -19,10 +20,11 @@ export default {
   text-align: center;
   color: #fcf7ff;
   background-color: rgba(0, 0, 0, 0);
-  border: 0.5em solid #fcf7ff;
+  border: 0.35em solid #fcf7ff;
   margin: 0 0.25em 1em;
   padding: 0.5em 1.5em;
   border-radius: 2em;
+  box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.125);
   /* remove default arrow on dorpdown select */
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -30,7 +32,8 @@ export default {
 }
 
 .button-component.inverted {
-  border-color: #04724d;
+  font-weight: bold;
+  border-color: #fcf7ff;
   background: #fcf7ff;
   color: #333;
 }
@@ -39,6 +42,12 @@ export default {
   padding: 0.5em 0.8em;
   line-height: 1;
   border-width: 0.4em;
+  font-weight: bold;
+}
+
+.button-component.attractive {
+  border-color: #21a0a0;
+  background-color: #21a0a0;
   font-weight: bold;
 }
 
