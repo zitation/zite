@@ -2,6 +2,7 @@
   <div class="add">
     <h1>Add Citation</h1>
     <Button @click.native="clearForm()">Clear</Button>
+    <Selector tabbed v-bind:options="['Website', 'Book', 'Video']"/>
     <a href='/#/view' ref='next'><Button class='view'>View All 🡺</Button></a>
     <form @submit="submitCitation()">
       <input type="text" v-model="meta.url" v-on:input="updateUrl" placeholder="URL" required>
@@ -26,6 +27,7 @@
 import MetaFetch from '@/services/MetaFetch.js'
 import LocalCitationStorage from '@/services/LocalCitationStorage.js'
 import Button from '@/components/Button'
+import Selector from '@/components/Selector'
 import _ from 'lodash'
 
 export default {
@@ -36,7 +38,8 @@ export default {
     }
   },
   components: {
-    Button
+    Button,
+    Selector
   },
   methods: {
     updateUrl: _.debounce(function () {
@@ -91,8 +94,8 @@ export default {
   margin: 0 0 1em;
 
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 .add input[type='text'] {
