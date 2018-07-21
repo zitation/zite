@@ -8,7 +8,7 @@
       <li v-for='(citation, index) in citations' v-bind:key='index'>
         <Citation v-bind:data='citation'></Citation>
         <Button dangerous @click.native='removeCitation(index)'>✖ Remove</Button>
-        <Button @click.native='removeCitation(index)'>⎘ Copy</Button>
+        <Button class='copy' @click.native='removeCitation(index)'>⎘ Copy</Button>
       </li>
     </ul>
     <p v-else>Add citations by clicking the 'Add New Citation' button.</p>
@@ -44,19 +44,19 @@ export default {
 <style>
 .view #citation-list {
   list-style-type: none;
-  padding: 0;
+  padding: 1em 0;
   margin: 0;
 }
 
 #citation-list li {
-  padding: 0.5em;
+  padding: 1em;
   border-radius: 1em;
   box-shadow: none;
 }
 
 #citation-list p {
   padding: 0;
-  margin: 0 0 0.25em;
+  margin: 0 0 0.5em;
 }
 
 #citation-list li Button {
@@ -64,6 +64,10 @@ export default {
   margin: 0 0.5em 0 0;
   padding: 0.35em 0.8em;
   font-size: 0.8em;
+}
+
+#citation-list li Button.copy {
+  float: right;
 }
 
 #citation-list li:hover Button {
