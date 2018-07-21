@@ -47,7 +47,7 @@ export default {
   padding: 0 0em;
   border-radius: 2em;
   
-  /* remove default arrow on dorpdown select */
+  /* remove default arrow on dropdown select */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
