@@ -42,9 +42,7 @@ export default {
   display: inline-block;
   color: #fcf7ff;
   background-color: rgba(0, 0, 0, 0);
-  border: 0.35em solid #fcf7ff;
-  margin: 0 0.25em;
-  padding: 0 0em;
+  border: 0.3em solid #fcf7ff;
   border-radius: 2em;
   
   /* remove default arrow on dropdown select */
@@ -62,7 +60,7 @@ select option {
 .tabbed span {
   display: inline-block;
   font-size: 0.8em;
-  padding: 0.5em 2em;
+  padding: 0.50em 2em;
   margin: 0;
 }
 
