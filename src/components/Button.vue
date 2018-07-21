@@ -1,5 +1,5 @@
 <template>
-  <button class='button-component' v-bind:class='{inverted, small, dangerous, attractive}'>
+  <button class='button-component' v-bind:class='{inverted, dangerous, attractive}'>
     <slot></slot>
   </button>
 </template>
@@ -8,7 +8,6 @@
 export default {
   props: {
     inverted: Boolean,
-    small: Boolean,
     dangerous: Boolean,
     attractive: Boolean
   }
@@ -36,13 +35,6 @@ export default {
   border-color: #fcf7ff;
   background: #fcf7ff;
   color: #333;
-}
-
-.button-component.small {
-  padding: 0.5em 0.8em;
-  line-height: 1;
-  border-width: 0.4em;
-  font-weight: bold;
 }
 
 .button-component.attractive {
