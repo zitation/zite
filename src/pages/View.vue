@@ -2,7 +2,7 @@
   <div class="view">
     <h1>View Citations</h1>
     <a href='/#/add' ref='prev'><Button>🡸 Add New Citation</Button></a>
-    <Selector class='type' v-bind:options='["APA", "MLA", "Harvard"]'>
+    <Selector class='type' v-bind:options='["APA", "MLA", "Harvard"]'/>
     </Selector>
     <ul id='citation-list' v-if='citations.length > 0'>
       <li v-for='(citation, index) in citations' v-bind:key='index'>
