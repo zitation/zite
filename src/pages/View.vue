@@ -1,7 +1,8 @@
 <template>
   <div class="view">
     <h1>View Citations</h1>
-    <a href='/#/add' ref='prev'><Button>🡸 Add New Citation</Button></a>
+    <a href='/#/add' ref='prev'><Button>🡸 New Citation</Button></a>
+    <Button>⎘ Copy All</Button>
     <Selector class='type' v-bind:options='["APA", "MLA", "Harvard"]'/>
     </Selector>
     <ul id='citation-list' v-if='citations.length > 0'>
