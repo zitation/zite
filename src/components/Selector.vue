@@ -53,7 +53,7 @@ export default {
 }
 
 select option {
-  padding: 0.5em 2em;
+  padding: 0.4em 2em;
   margin: 0;
 }
 

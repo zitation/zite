@@ -141,5 +141,6 @@ export default {
 
 Button.view {
   float: right;
+  margin-right: 0;
 }
 </style>
