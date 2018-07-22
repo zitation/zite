@@ -4,70 +4,33 @@
     <Button @click.native="clearForm()">Clear</Button>
     <Selector tabbed v-bind:options="types" @selectionChange="handleTypeChange($event)"/>
     <a href='/#/view' ref='next'><Button class='view'>View All 🡺</Button></a>
-    <form @submit="submitCitation()">
-      <input type="text" v-model="meta.url" v-on:input="updateUrl" placeholder="URL" required>
-      <input type="text" v-model="meta.title" placeholder="Title" required>
-      <input type="text" v-model="meta.author" placeholder="Author" required>
-      <div class="dates">
-        <label class="date">
-          <span>Date Accessed</span>
-          <input type="date" v-model="meta.date_accessed" required>
-        </label>
-        <label class="date">
-          <span>Date Published</span>
-          <input type="date" v-model="meta.date_published">
-        </label>
-      </div>
-      <input type="submit" value="Add" required>
-    </form>
+    <WebsiteForm v-if="type === 'Website'"/>
+    <input type="submit" value="Add" required>
   </div>
 </template>
 
 <script>
-import MetaFetch from '@/services/MetaFetch.js'
 import LocalCitationStorage from '@/services/LocalCitationStorage.js'
 import Button from '@/components/Button'
 import Selector from '@/components/Selector'
-import _ from 'lodash'
+import WebsiteForm from '@/components/entry_forms/Website'
 
 export default {
   data () {
     return {
-      meta: this.defaultValues(),
-      fieldsRequired: Object.keys(this.defaultValues()),
+      meta: {},
       types: ['Website', 'Book', 'Journal', 'Media', 'Other'],
       type: 'Website'
     }
   },
   components: {
     Button,
-    Selector
+    Selector,
+    WebsiteForm
   },
   methods: {
     handleTypeChange (e) {
       this.type = e
-    },
-    updateUrl: _.debounce(function () {
-      this.getMeta()
-    }, 500),
-    async getMeta () {
-      var response = false
-      try {
-        response = await MetaFetch.fetch(this.meta.url)
-      } catch (error) {
-      }
-      if (response) {
-        this.meta = Object.assign(this.meta, response.data) // merge, dont cobble
-      }
-    },
-    defaultValues () {
-      return {
-        url: '',
-        title: '',
-        author: '',
-        date_published: '',
-        date_accessed: new Date().toISOString().slice(0, 10)
-      }
     },
     clearForm () {
       this.meta = this.defaultValues()
