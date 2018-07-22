@@ -32,6 +32,14 @@ export default {
   props: {
     options: Array,
     tabbed: Boolean
+  },
+  watch: {
+    selection: {
+      handler () {
+        this.$emit('selectionChange', this.selection)
+      },
+      deep: true
+    }
   }
 }
 </script>

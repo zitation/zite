@@ -2,7 +2,7 @@
   <div class="add">
     <h1>Add Citation</h1>
     <Button @click.native="clearForm()">Clear</Button>
-    <Selector tabbed v-bind:options="['Website', 'Book', 'Video']"/>
+    <Selector tabbed v-bind:options="types" @selectionChange="handleTypeChange($event)"/>
     <a href='/#/view' ref='next'><Button class='view'>View All 🡺</Button></a>
     <form @submit="submitCitation()">
       <input type="text" v-model="meta.url" v-on:input="updateUrl" placeholder="URL" required>
@@ -34,7 +34,9 @@ export default {
   data () {
     return {
       meta: this.defaultValues(),
-      fieldsRequired: Object.keys(this.defaultValues())
+      fieldsRequired: Object.keys(this.defaultValues()),
+      types: ['Website', 'Book', 'Journal', 'Media', 'Other'],
+      type: 'Website'
     }
   },
   components: {
@@ -42,6 +44,9 @@ export default {
     Selector
   },
   methods: {
+    handleTypeChange (e) {
+      this.type = e
+    },
     updateUrl: _.debounce(function () {
       this.getMeta()
     }, 500),
