@@ -59,6 +59,10 @@ export default {
     color: #fcf7ff;
   }
 
+  input::-moz-focus-inner { 
+    border: 0; 
+  }
+
   #page_content {
     width: 60%;
     margin: 0em auto;
