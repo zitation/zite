@@ -32,6 +32,7 @@ export default {
   margin: 0 auto;
   display: block;
   width: 33%;
+  min-width: 12.5em;
   font-size: 1em;
 }
 </style>
