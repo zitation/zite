@@ -37,6 +37,10 @@ export default {
   padding: 1em 0;
 }
 
+input::-moz-focus-inner { 
+  border: 0; 
+}
+
 Button.view {
   float: right;
   margin-right: 0;
