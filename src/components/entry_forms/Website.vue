@@ -13,10 +13,12 @@
         <input type="date" v-model="meta.date_published">
       </label>
     </div>
+    <input type="submit" value="Add" required>
   </form>
 </template>
 
 <script>
+import LocalCitationStorage from '@/services/LocalCitationStorage.js'
 import MetaFetch from '@/services/MetaFetch.js'
 import _ from 'lodash'
 
@@ -48,12 +50,22 @@ export default {
         date_published: '',
         date_accessed: new Date().toISOString().slice(0, 10)
       }
+    },
+    clearForm () {
+      this.meta = this.defaultValues()
+    },
+    submitCitation () {
+      var sucess = LocalCitationStorage.add(this.meta)
+
+      if (sucess) {
+        this.clearForm()
+      }
     }
   },
   watch: {
-    formData: {
+    meta: {
       handler () {
-        this.$emit('newData', this.selection)
+        this.$emit('formChange', this.selection)
       },
       deep: true
     }
@@ -62,10 +74,6 @@ export default {
 </script>
 
 <style>
-.add form {
-  padding: 1em 0;
-}
-
 .add input {
   font-weight: bold;
 
