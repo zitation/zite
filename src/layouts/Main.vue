@@ -65,6 +65,7 @@ export default {
 
   #page_content {
     width: 60%;
+    min-width: 35em;
     margin: 0em auto;
     min-height: 80vh;
     display: block;
