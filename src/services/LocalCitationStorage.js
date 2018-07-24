@@ -37,7 +37,8 @@ export default {
     setCitationsJSON(citations)
   },
 
-  add: function (data) {
+  add: function (type, meta) {
+    var data = {'type': type, 'meta': meta}
     var citations = getCitationsJSON()
     if (citations) {
       citations.push(data)

@@ -4,19 +4,37 @@
 
 <script>
 export default {
+  data () {
+    return {
+      composer: {
+        'website': this.composeWebsite,
+        'book': this.composeBook
+      }
+    }
+  },
   props: {
     data: Object
   },
   methods: {
     template (data) {
+      var type = data.type
+      var meta = data.meta
+      console.log(data)
+
+      return this.composer[type](meta)
+    },
+    composeWebsite (meta) {
       // remove http/https
-      if (data.url.startsWith('https://')) {
-        data.url = data.url.slice(8)
-      } else if (data.url.startsWith('http://')) {
-        data.url = data.url.slice(7)
+      if (meta.url.startsWith('https://')) {
+        meta.url = meta.url.slice(8)
+      } else if (meta.url.startsWith('http://')) {
+        meta.url = meta.url.slice(7)
       }
 
-      return `${data.author}. ${data.date_published}. ${data.title}. Retrieved ${data.date_accessed}, from ${data.url}`
+      return `${meta.author}. ${meta.date_published}. ${meta.title}. Retrieved ${meta.date_accessed}, from ${meta.url}`
+    },
+    composeBook (meta) {
+      return `${meta.author}. ${meta.date_published}. ${meta.title}. ${meta.place_of_publication}: ${meta.publisher}`
     }
   }
 }
