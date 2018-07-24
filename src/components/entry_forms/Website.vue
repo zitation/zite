@@ -1,8 +1,8 @@
 <template>
   <form class='Website' @submit="submitCitation()">
-    <input type="text" v-model="meta.url" v-on:input="updateUrl" placeholder="URL" required>
-    <input type="text" v-model="meta.title" placeholder="Title" required>
-    <input type="text" v-model="meta.author" placeholder="Author" required>
+    <input v-model="meta.url" v-on:input="updateUrl" placeholder="URL" required>
+    <input v-model="meta.title" placeholder="Title" required>
+    <input v-model="meta.author" placeholder="Author" required>
     <div class="dates">
       <label class="date">
         <span>Date Accessed</span>

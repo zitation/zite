@@ -1,9 +1,9 @@
 <template>
   <form class='Book' @submit="submitCitation()">
-    <input type="text" v-model="meta.title" placeholder="Title" required>
-    <input type="text" v-model="meta.author" placeholder="Author" required>
-    <input type="text" v-model="meta.place_of_publication" placeholder="Place of Publication" required>
-    <input type="text" v-model="meta.publisher" placeholder="Publisher" required>
+    <input v-model="meta.title" placeholder="Title" required>
+    <input v-model="meta.author" placeholder="Author" required>
+    <input v-model="meta.place_of_publication" placeholder="Place of Publication" required>
+    <input v-model="meta.publisher" placeholder="Publisher" required>
     <label class="date">
       <span>Date Published</span>
       <input type="date" v-model="meta.date_published">

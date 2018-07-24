@@ -49,14 +49,11 @@ export default {
 
   padding: 0.75em 1.5em;
   margin: 0 0 1em;
+  width: 100%;
 
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
-}
-
-.add input[type='text'] {
-  width: 100%;
 }
 
 .add input[type='submit'] {
@@ -67,9 +64,6 @@ export default {
   background: rgba(0, 0, 0, 0);
   border: 0.35em solid #fcf7ff;
   width: 33%;
-}
-
-.add input[type='submit']:hover {
 }
 
 .add .date {
