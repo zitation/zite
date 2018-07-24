@@ -34,7 +34,7 @@ export default {
       return `${meta.author}. ${meta.date_published}. ${meta.title}. Retrieved ${meta.date_accessed}, from ${meta.url}`
     },
     composeBook (meta) {
-      return `${meta.author}. ${meta.date_published}. ${meta.title}. ${meta.place_of_publication}: ${meta.publisher}`
+      return `${meta.author}. (${meta.date_published.slice(0, 4)}). ${meta.title}. ${meta.place_of_publication}: ${meta.publisher}`
     }
   }
 }
