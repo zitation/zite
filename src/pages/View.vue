@@ -2,14 +2,16 @@
   <div class="view">
     <h1>View Citations</h1>
     <a href='/#/add' ref='prev'><Button>🡸 New Citation</Button></a>
-    <Button>⎘ Copy All</Button>
+    <Button v-clipboard:copy='composeAll()'>⎘ Copy All</Button>
     <Selector class='type' v-bind:options='["APA", "MLA", "Harvard"]'/>
     </Selector>
     <ul id='citation-list' v-if='citations.length > 0'>
       <li v-for='(citation, index) in citations' v-bind:key='index'>
-        <Citation v-bind:data='citation'></Citation>
+        <p>{{composeCitation(citation)}}</p>
         <Button dangerous @click.native='removeCitation(index)'>✖ Remove</Button>
-        <Button class='copy' @click.native='removeCitation(index)'>⎘ Copy</Button>
+
+        <Button class='copy' v-clipboard:copy='composeCitation(citation)'>⎘ Copy</Button>
+        <Button class='copy' v-clipboard:copy='composeInText(citation)'>⎘ In-text</Button>
       </li>
     </ul>
     <p v-else>Add citations by clicking the 'Add New Citation' button.</p>
@@ -18,9 +20,9 @@
 
 <script>
 import LocalCitationStorage from '@/services/LocalCitationStorage.js'
+import CitationCompose from '@/services/CitationCompose'
 import Button from '@/components/Button'
 import Selector from '@/components/Selector'
-import Citation from '@/components/Citation'
 
 export default {
   data () {
@@ -30,13 +32,19 @@ export default {
   },
   components: {
     Button,
-    Selector,
-    Citation
+    Selector
   },
   methods: {
     removeCitation (index) {
       LocalCitationStorage.removeByIndex(index)
       this.citations = LocalCitationStorage.getAll()
+    },
+    composeCitation: CitationCompose.composeCitation,
+    composeInText: CitationCompose.composeInText,
+    composeAll () {
+      if (this.citations) {
+        return this.citations.map(citation => (this.composeCitation(citation) + '\n\n')).join('')
+      }
     }
   }
 }
