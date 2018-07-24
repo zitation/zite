@@ -4,7 +4,8 @@
     <Selector tabbed v-bind:options="types" @selectionChange="handleTypeChange($event)"/>
     <a href='/#/view' ref='next'><Button class='view'>View All 🡺</Button></a>
     <WebsiteForm v-if="type === 'Website'"/>
-    <BookForm v-if="type === 'Book'"/>
+    <BookForm v-else-if="type === 'Book'"/>
+    <p v-else>Coming Soon!</p>
   </div>
 </template>
 
