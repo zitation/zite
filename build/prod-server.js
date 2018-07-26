@@ -16,6 +16,6 @@ require('../src/server.js')(app)
 // serve built webpack files
 app.use(express.static('./dist'))
 
-const uri = 'https://zite-citation.herokuapp.com:' + port
+const uri = '0.0.0.0:' + port
 
 const server = app.listen(port)
