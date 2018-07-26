@@ -61,6 +61,7 @@ export default {
   padding: 1em;
   border-radius: 1em;
   box-shadow: none;
+  transition-duration: 0.5s;
 }
 
 #citation-list p {
@@ -73,6 +74,7 @@ export default {
   margin: 0 0.5em 0 0;
   padding: 0.35em 0.8em;
   font-size: 0.8em;
+  transition-duration: 0.25s;
 }
 
 #citation-list li Button.copy {
@@ -81,13 +83,11 @@ export default {
 
 #citation-list li:hover Button {
   opacity: 1;
-  transition-duration: 0.25s;
 }
 
 #citation-list li:hover{
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.125);
-  transition-duration: 0.25s;
 }
 
 .type {
