@@ -6,7 +6,7 @@ process.env.NODE_ENV = 'production'
 
 const express = require('express')
 
-const port = 80
+const port = 8080
 
 const app = express()
 
@@ -17,5 +17,7 @@ require('../src/server.js')(app)
 app.use(express.static('./dist'))
 
 const uri = '0.0.0.0:' + port
+
+console.log('URI: ' + uri)
 
 const server = app.listen(port)
