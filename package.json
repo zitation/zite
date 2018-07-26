@@ -15,12 +15,16 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "chalk": "^2.4.1",
     "cors": "^2.8.4",
     "lodash": "^4.17.10",
+    "ora": "^1.4.0",
+    "rimraf": "^2.6.2",
     "url-metadata": "^2.1.7",
     "vue": "^2.5.2",
     "vue-clipboard2": "^0.2.0",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "webpack": "^3.12.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",
@@ -33,7 +37,6 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
-    "chalk": "^2.4.1",
     "chromedriver": "^2.33.1",
     "connect-history-api-fallback": "^1.4.0",
     "copy-webpack-plugin": "^4.1.1",
@@ -72,9 +75,7 @@
     "nodemon": "^1.17.5",
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
-    "ora": "^1.4.0",
     "phantomjs-prebuilt": "^2.1.15",
-    "rimraf": "^2.6.2",
     "selenium-server": "^3.6.0",
     "semver": "^5.4.1",
     "shelljs": "^0.7.8",
@@ -86,7 +87,6 @@
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.3",
     "vue-template-compiler": "^2.5.2",
-    "webpack": "^3.7.1",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.19.1",
