@@ -19,7 +19,7 @@ module.exports = function (app) {
       }
       else {
         urlMetadata(url).then(
-        function (meta) { // success handler
+        function (meta) {
           try {
             var response = {
               title: meta['title'] || meta['og:title'],
@@ -36,13 +36,11 @@ module.exports = function (app) {
             console.log(e)
           }
         },
-        function (error) { // failure handler
+        function (error) {
           console.log(error)
         })
       }
     }
   })
-
-  console.log('> dynamic js loaded')
 }
 

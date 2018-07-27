@@ -13,6 +13,8 @@ const app = express()
 // serve dynammic assets
 require('../src/server.js')(app)
 
+console.log('> Started Backend')
+
 // serve built webpack files
 app.use(express.static('./dist'))
 
