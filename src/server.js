@@ -1,7 +1,9 @@
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const urlMetadata = require('url-metadata')
+
 module.exports = function (app) {
-  const bodyParser = require('body-parser')
-  const cors = require('cors')
-  const urlMetadata = require('url-metadata')
+  
   app.use(bodyParser.json())
   app.use(cors())
 
@@ -42,5 +44,24 @@ module.exports = function (app) {
       }
     }
   })
+
+  const { Pool } = require('pg');
+  const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true
+  });
+
+  app.get('/db', async (req, res) => {
+    console.log(process.env.ROOT_API)
+    try {
+      const client = await pool.connect()
+      const result = await client.query('SELECT * FROM test_table');
+      res.send(result);
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  });
 }
 
