@@ -2,8 +2,15 @@
 	"folders":
 	[
 		{
-			"path": ".",
-			"folder_exclude_patterns": ["node_modules", "etc"]
+			"folder_exclude_patterns":
+			[
+				"node_modules",
+				"etc"
+			],
+			"path": "."
 		},
+		{
+			"path": "src"
+		}
 	]
 }
