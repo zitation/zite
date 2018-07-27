@@ -17,4 +17,6 @@ selenium-debug.log
 
 # Sublime Text
 zite.sublime-workspace
+
+# Heroku
 .env
