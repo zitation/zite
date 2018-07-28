@@ -47,12 +47,13 @@ module.exports = function (app) {
 
   const { Pool } = require('pg');
   const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: process.env.HEROKU_POSTGRESQL_CRIMSON_URL,
     ssl: true
   });
 
+  const config = require('../config')
+
   app.get('/db', async (req, res) => {
-    console.log(process.env.ROOT_API)
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM test_table');
