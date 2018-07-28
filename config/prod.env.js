@@ -1,5 +1,5 @@
 module.exports = {
   NODE_ENV: 'production',
   ROOT_API: 'https://zite-citation.herokuapp.com/',
-  HEROKU_POSTGRESQL_CRIMSON_URL: 'postgres://djrafpzcukuqvy:0a3d98fd0726554f522986a345394a7e6ea6b15515514d3384a063994d600394@ec2-50-16-241-91.compute-1.amazonaws.com:5432/d20da3fugv377c'
+  HEROKU_POSTGRESQL_CRIMSON_URL: 'postgres://ecswhwvurektvo:e2672f92925ef1e9ec4c55581329f7b20738f8310158e0575ed7cffe2fc64e2c@ec2-50-16-241-91.compute-1.amazonaws.com:5432/d9grffca0a313r'
 }

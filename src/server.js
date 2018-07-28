@@ -56,7 +56,7 @@ module.exports = function (app) {
   app.get('/db', async (req, res) => {
     try {
       const client = await pool.connect()
-      const result = await client.query('SELECT * FROM test_table');
+      const result = await client.query('SELECT * FROM meta_cache');
       res.send(result);
       client.release();
     } catch (err) {
