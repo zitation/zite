@@ -43,7 +43,7 @@ compiler.plugin('compilation', function (compilation) {
 })
 
 // serve dynammic assets
-require('../src/server.js')(app)
+require('../src/backend/server.js')(app)
 
 console.log('> Started Backend')
 

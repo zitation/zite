@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000
 const app = express()
 
 // serve dynammic assets
-require('../src/server.js')(app)
+require('../src/backend/server.js')(app)
 
 console.log('> Started Backend')
 
