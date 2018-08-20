@@ -2,12 +2,6 @@
   <div id="app">
     <header>
       <a href="/#/"><h1 id="title">zite</h1></a>
-      <nav>
-        <ul>
-          <li><Button inverted>Login</Button></li>
-          <li><Button attractive>Sign Up</Button></li>
-        </ul>
-      </nav>
     </header>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Allan|Lato">
     <div id="page_content">
@@ -43,15 +37,6 @@ export default {
     margin: 0;
     color: #fcf7ff;
     text-align: left;
-    display: inline;
-  }
-
-  header nav ul {
-    float: right;
-    list-style: none;
-  }
-
-  header nav ul li {
     display: inline;
   }
 
