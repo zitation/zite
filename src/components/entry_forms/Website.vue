@@ -57,7 +57,7 @@ export default {
     submitCitation () {
       var sucess = LocalCitationStorage.add('website', this.meta)
 
-      if (sucess) {
+      if (sucess === true) {
         this.clearForm()
       }
     }
