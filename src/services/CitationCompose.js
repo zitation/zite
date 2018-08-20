@@ -22,7 +22,6 @@ export default {
   composeCitation (data) {
     var type = data.type
     var meta = data.meta
-    console.log(composers[type](meta))
     return composers[type](meta)
   },
   composeInText (data) {
