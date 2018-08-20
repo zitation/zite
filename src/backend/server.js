@@ -3,7 +3,6 @@ module.exports = function (app) {
   const cors = require('cors')
   const urlMetadata = require('url-metadata')
   const meta_scrape = require('./meta_scrape.js')
-  const meta_cache = require('./meta_cache.js')
   app.use(bodyParser.json())
   app.use(cors())
 
@@ -20,11 +19,7 @@ module.exports = function (app) {
         res.json(response)
       }
       else {
-        if (meta_cache.urlIsCached(url)) {
-          console.log("url already exists!")
-        } else {
-          response.json(meta_scrape.get(url))
-        }
+        meta_scrape.get(url, res)
       }
     }
   })

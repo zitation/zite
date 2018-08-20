@@ -1,7 +1,7 @@
 const url_metadata = require('url-metadata')
 
 module.exports = {
-  get: function (url) {
+  get: function (url, response) {
     url_metadata(url).then(
     function (meta) {
       var meta = {
@@ -13,7 +13,7 @@ module.exports = {
       if (meta.date_published)
         meta.date_published = meta.date_published.substring(0, 10)
 
-      return meta
+      response.json(meta)
     },
     function (error) {
       console.error(error)
