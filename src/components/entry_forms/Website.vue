@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import LocalCitationStorage from '@/services/LocalCitationStorage.js'
+import LocalCitationStorage from '@/services/local_citation_storage.js'
 import MetaFetch from '@/services/MetaFetch.js'
 import _ from 'lodash'
 
