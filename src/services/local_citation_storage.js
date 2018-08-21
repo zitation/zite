@@ -47,5 +47,7 @@ export default {
       citations = [data]
     }
     setCitationsJSON(citations)
+
+    return true
   }
 }
