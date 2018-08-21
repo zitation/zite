@@ -6,16 +6,16 @@ module.exports = function (app) {
   app.use(bodyParser.json())
   app.use(cors())
 
-  app.post('/meta', (req, res) => {
-    const url = req.body.url
+  app.post('/meta', (request, response) => {
+    const url = request.body.url
 
     if (url) {
       if (url === 'test') {
         var test_values = require('./meta/test_values.js')
-        res.json(test_values)
+        response.json(test_values)
       }
       else {
-        meta_scrape.get(url, res)
+        meta_scrape.get(url, response)
       }
     }
   })
