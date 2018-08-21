@@ -11,7 +11,6 @@ function getCitationsJSON () {
 }
 
 function isDuplicate (data, citations) {
-  citations = getCitationsJSON()
   for (var i = 0; i < citations.length; i++) {
     if (citations[i].meta.url === data.meta.url) {
       return true
