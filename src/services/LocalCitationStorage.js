@@ -10,15 +10,6 @@ function getCitationsJSON () {
   }
 }
 
-function isDuplicate (data, citations) {
-  for (var i = 0; i < citations.length; i++) {
-    if (citations[i].meta.url === data.meta.url) {
-      return true
-    }
-  }
-  return false
-}
-
 export default {
   getAll: function () {
     return getCitationsJSON()
@@ -50,16 +41,11 @@ export default {
     var data = {'type': type, 'meta': meta}
     var citations = getCitationsJSON()
 
-    if (isDuplicate(meta, citations)) {
-      return false
+    if (citations) {
+      citations.push(data)
     } else {
-      if (citations) {
-        citations.push(data)
-      } else {
-        citations = [data]
-      }
-      setCitationsJSON(citations)
-      return true
+      citations = [data]
     }
+    setCitationsJSON(citations)
   }
 }
