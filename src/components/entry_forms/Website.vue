@@ -5,11 +5,11 @@
     <input v-model="meta.author" placeholder="Author" required>
     <div class="dates">
       <label class="date">
-        <span>Date Accessed</span>
+        <span>Accessed</span>
         <input type="date" v-model="meta.date_accessed" required>
       </label>
       <label class="date">
-        <span>Date Published</span>
+        <span>Published</span>
         <input type="date" v-model="meta.date_published">
       </label>
     </div>

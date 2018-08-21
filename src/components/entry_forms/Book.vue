@@ -5,7 +5,7 @@
     <input v-model="meta.place_of_publication" placeholder="Place of Publication" required>
     <input v-model="meta.publisher" placeholder="Publisher" required>
     <label class="date">
-      <span>Date Published</span>
+      <span>Published</span>
       <input type="date" v-model="meta.date_published">
     </label>
     <input type="submit" value="Add" required>
