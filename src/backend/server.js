@@ -3,6 +3,7 @@ module.exports = function (app) {
   const cors = require('cors')
   const urlMetadata = require('url-metadata')
   const meta_scrape = require('./meta/scrape.js')
+
   app.use(bodyParser.json())
   app.use(cors())
 
@@ -11,7 +12,7 @@ module.exports = function (app) {
 
     if (url) {
       if (url === 'test') {
-        var test_values = require('./meta/test_values.js')
+        const test_values = require('./meta/test_values.js')
         response.json(test_values)
       }
       else {
