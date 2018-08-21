@@ -20,7 +20,7 @@
 
 <script>
 import LocalCitationStorage from '@/services/LocalCitationStorage.js'
-import CitationCompose from '@/services/CitationCompose'
+import CitationCompose from '@/services/citation_composer/citation_composer.js'
 import Button from '@/components/Button'
 import Selector from '@/components/Selector'
 
