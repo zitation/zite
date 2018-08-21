@@ -35,10 +35,10 @@ const composers = {
 }
 
 export default {
-  composeCitation (data) {
+  citation: function (data) {
     return composers[data.type](data.meta)
   },
-  composeInText (data) {
+  inText: function (data) {
     return `(${data.meta.author}, ${data.meta.date_published.year})`
   }
 }

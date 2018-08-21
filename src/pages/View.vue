@@ -39,8 +39,8 @@ export default {
       LocalCitationStorage.removeByIndex(index)
       this.citations = LocalCitationStorage.getAll()
     },
-    composeCitation: CitationCompose.composeCitation,
-    composeInText: CitationCompose.composeInText,
+    composeCitation: CitationCompose.citation,
+    composeInText: CitationCompose.inText,
     composeAll () {
       if (this.citations) {
         return this.citations.map(citation => (this.composeCitation(citation) + '\n\n')).join('')
