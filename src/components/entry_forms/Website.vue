@@ -19,7 +19,7 @@
 
 <script>
 import LocalCitationStorage from '@/services/local_citation_storage.js'
-import MetaFetch from '@/services/MetaFetch.js'
+import MetaFetch from '@/api/meta_fetch.js'
 import _ from 'lodash'
 
 export default {

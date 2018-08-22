@@ -1,4 +1,4 @@
-import AxiosClient from '@/services/axios_client'
+import AxiosClient from '@/api/axios_client'
 
 export default {
   fetch (url) {
