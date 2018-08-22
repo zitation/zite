@@ -1,7 +1,11 @@
-import AxiosClient from '@/api/axios_client'
+import axios from 'axios'
+
+axios.create({
+  baseURL: process.env.ROOT_API
+})
 
 export default {
   fetch (url) {
-    return AxiosClient().post('/meta', {'url': url})
+    return axios.post('/meta', {'url': url})
   }
 }
