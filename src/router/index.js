@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import MainLayout from '@/layouts/Main'
+import MainLayout from '@/pages/layouts/Main'
 import Home from '@/pages/Home'
 import Add from '@/pages/Add'
 import View from '@/pages/View'
