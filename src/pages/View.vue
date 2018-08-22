@@ -10,8 +10,8 @@
         <p>{{composeCitation(format, citation)}}</p>
         <Button dangerous @click.native='removeCitation(index)'>✖ Remove</Button>
 
-        <Button class='copy' v-clipboard:copy='composeCitation(format, citation)'>⎘ Copy</Button>
-        <Button class='copy' v-clipboard:copy='composeInText(citation)'>⎘ In-text</Button>
+        <Button class='export-single' v-clipboard:copy='composeCitation(format, citation)'>⎘ Copy</Button>
+        <Button class='export-single' v-clipboard:copy='composeInText(citation)'>⎘ In-text</Button>
       </li>
     </ul>
     <p v-else>Add citations by clicking the 'Add New Citation' button.</p>
@@ -83,7 +83,7 @@ export default {
   transition-duration: 0.25s;
 }
 
-#citation-list li Button.copy {
+#citation-list li Button.export-single {
   float: right;
 }
 
