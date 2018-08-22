@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import LocalCitationStorage from '@/services/local_citation_storage.js'
 
 export default {
   data () {
@@ -36,11 +35,6 @@ export default {
       this.meta = this.defaultValues()
     },
     submitCitation () {
-      var sucess = LocalCitationStorage.add('book', this.meta)
-
-      if (sucess) {
-        this.clearForm()
-      }
     }
   }
 }
