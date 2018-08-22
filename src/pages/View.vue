@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import CitationCompose from '@/services/citation_composer/citation_composer.js'
 import Formats from '@/services/citation_composer/formats.js'
 import Button from '@/components/Button'
@@ -41,7 +41,10 @@ export default {
     composeInText: CitationCompose.inText,
     formatSelectionChange (selection) {
       this.format = selection
-    }
+    },
+    ...mapActions('bibliography', {
+      removeCitation: 'remove'
+    })
   },
   computed: {
     ...mapGetters('bibliography', [
