@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import LocalCitationStorage from '@/services/local_citation_storage.js'
+import { mapActions } from 'vuex'
 import MetaFetch from '@/api/meta_fetch.js'
 import _ from 'lodash'
 
@@ -55,12 +55,13 @@ export default {
       this.meta = this.defaultValues()
     },
     submitCitation () {
-      var sucess = LocalCitationStorage.add('website', this.meta)
-
-      if (sucess === true) {
-        this.clearForm()
-      }
-    }
+      const data = {type: 'website', meta: this.meta}
+      this.add(data)
+      this.clearForm()
+    },
+    ...mapActions('bibliography', [
+      'add'
+    ])
   }
 }
 </script>

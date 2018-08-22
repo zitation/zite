@@ -18,15 +18,22 @@ const getters = {
 }
 
 const mutations = {
-  add (state, citation) {
-    state.references.push(citation)
+  add (state, payload) {
+    console.log(payload)
+    const data = {type: payload.type, meta: payload.meta}
+    state.references.push(data)
+    console.log('well hello')
   }
 }
 
 const actions = {
+  add ({ commit }, payload) {
+    commit('add', payload)
+  }
 }
 
 export default {
+  namespaced: true,
   state,
   getters,
   mutations,
