@@ -25,6 +25,6 @@ export default {
   book: function (meta) {
     var datePublished = getDateComponentsFromString(meta.date_published)
 
-    return `${meta.author}. (${datePublished.year}). ${meta.title}. ${meta.place_of_publication}: ${meta.publisher}`
+    return `${meta.author}. (${datePublished.year}). ${meta.title}. ${meta.location}: ${meta.publisher}`
   }
 }

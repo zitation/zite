@@ -2,7 +2,7 @@
   <form class='Book' @submit="submitCitation()">
     <input v-model="meta.title" placeholder="Title" required>
     <input v-model="meta.author" placeholder="Author" required>
-    <input v-model="meta.place_of_publication" placeholder="Place of Publication" required>
+    <input v-model="meta.location" placeholder="Place of Publication" required>
     <input v-model="meta.publisher" placeholder="Publisher" required>
     <label class="date">
       <span>Published</span>
@@ -28,7 +28,7 @@ export default {
         title: '',
         author: '',
         date_published: '',
-        place_of_publication: '',
+        location: '',
         publisher: ''
       }
     },
