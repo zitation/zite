@@ -2,7 +2,7 @@
   <div class="view">
     <h1>View Citations</h1>
     <a href='/#/add' ref='prev'><Button>🡸 New Citation</Button></a>
-    <Button v-clipboard:copy=''>⎘ Copy All</Button>
+    <Button v-clipboard:copy='composeBibliography(references)'>⎘ Copy All</Button>
     <Selector v-on:selectionChange='formatSelectionChange($event)' class='type' v-bind:options='formats'/>
     </Selector>
     <ul id='citation-list' v-if='references.length > 0'>
@@ -38,6 +38,14 @@ export default {
   },
   methods: {
     composeCitation,
+    composeBibliography (citations) {
+      return this.references.map(
+        reference => (this.composeCitation(reference, {
+          format: this.format,
+          type: 'citation'
+        }) + '\n')
+      ).join('')
+    },
     formatSelectionChange (selection) {
       this.format = selection
     },
