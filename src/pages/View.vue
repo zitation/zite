@@ -11,7 +11,7 @@
         <Button dangerous @click.native='removeCitation(index)'>✖ Remove</Button>
 
         <Button class='export-single' v-clipboard:copy='composeCitation(format, citation)'>⎘ Copy</Button>
-        <Button class='export-single' v-clipboard:copy='composeInText(citation)'>⎘ In-text</Button>
+        <Button class='export-single' v-clipboard:copy='composeInText(format, citation)'>⎘ In-text</Button>
       </li>
     </ul>
     <p v-else>Add citations by clicking the 'Add New Citation' button.</p>
@@ -20,8 +20,8 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import CitationCompose from '@/services/citation_composer/citation_composer.js'
-import Formats from '@/services/citation_composer/formats.js'
+import CitationCompose from '@/services/reference_composer/'
+import Formats from '@/services/reference_composer/formats/'
 import Button from '@/components/Button'
 import Selector from '@/components/Selector'
 
