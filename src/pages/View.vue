@@ -7,11 +7,11 @@
     </Selector>
     <ul id='citation-list' v-if='references.length > 0'>
       <li v-for='(citation, index) in references' v-bind:key='index'>
-        <p>{{composeCitation(format, citation)}}</p>
+        <p>{{composeCitation(citation, {"format": format, "type": "citation"})}}</p>
         <Button dangerous @click.native='removeCitation(index)'>✖ Remove</Button>
 
-        <Button class='export-single' v-clipboard:copy='composeCitation(format, citation)'>⎘ Copy</Button>
-        <Button class='export-single' v-clipboard:copy='composeInText(format, citation)'>⎘ In-text</Button>
+        <Button class='export-single' v-clipboard:copy='composeCitation(citation, {"format": format, "type": "citation"})'>⎘ Copy</Button>
+        <Button class='export-single' v-clipboard:copy='composeCitation(citation, {"format": format, "type": "inText"})'>⎘ In-text</Button>
       </li>
     </ul>
     <p v-else>Add citations by clicking the 'Add New Citation' button.</p>
@@ -20,7 +20,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import CitationCompose from '@/services/reference_composer/'
+import composeCitation from '@/services/reference_composer/'
 import Formats from '@/services/reference_composer/formats/'
 import Button from '@/components/Button'
 import Selector from '@/components/Selector'
@@ -37,8 +37,7 @@ export default {
     Selector
   },
   methods: {
-    composeCitation: CitationCompose.citation,
-    composeInText: CitationCompose.inText,
+    composeCitation,
     formatSelectionChange (selection) {
       this.format = selection
     },
