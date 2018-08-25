@@ -31,7 +31,7 @@ export default {
   methods: {
     updateUrl: _.debounce(function () {
       this.getMeta()
-    }, 500),
+    }, 250),
     async getMeta () {
       var response = false
       try {
