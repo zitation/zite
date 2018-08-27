@@ -4,21 +4,22 @@
     <input v-model="meta.author" placeholder="Author" required>
     <input v-model="meta.location" placeholder="Place of Publication" required>
     <input v-model="meta.publisher" placeholder="Publisher" required>
-    <label class="date">
-      <span>Published</span>
-      <input type="date" v-model="meta.date_published">
-    </label>
+    <DateInput title='Published' v-model='meta.date_published'></DateInput>
     <input type="submit" value="Add" required>
   </form>
 </template>
 
 <script>
+import DateInput from '@/components/forms/DateInput'
 
 export default {
   data () {
     return {
       meta: this.defaultValues()
     }
+  },
+  components: {
+    DateInput
   },
   methods: {
     defaultValues () {
@@ -41,7 +42,5 @@ export default {
 </script>
 
 <style>
-form.Book .date input {
-  width: 50%;
-}
+
 </style>

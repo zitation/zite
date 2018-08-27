@@ -67,27 +67,6 @@ export default {
   width: 33%;
 }
 
-.add .date {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  width: 49%;
-}
-
-.add .date span {
-  font-weight: bold;
-
-  margin: 0 0 0.5em 1em;
-
-  display: block;
-}
-
-.add .date input[type='date'] {
-  line-height: 1.5em;
-  display: inline-block;
-  width: 95%;
-}
-
 Button.view {
   float: right;
   margin-right: 0;

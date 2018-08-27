@@ -4,20 +4,15 @@
     <input v-model="meta.title" placeholder="Title" required>
     <input v-model="meta.author" placeholder="Author" required>
     <div class="dates">
-      <label class="date">
-        <span>Accessed</span>
-        <input type="date" v-model="meta.date_accessed" required>
-      </label>
-      <label class="date">
-        <span>Published</span>
-        <input type="date" v-model="meta.date_published">
-      </label>
+      <DateInput title='Accessed' v-model='meta.date_accessed'></DateInput>
+      <DateInput title='Published' v-model='meta.date_published'></DateInput>
     </div>
     <input type="submit" value="Add" required>
   </form>
 </template>
 
 <script>
+import DateInput from '@/components/forms/DateInput'
 import { mapActions } from 'vuex'
 import MetaFetch from '@/api/meta_fetch.js'
 import _ from 'lodash'
@@ -27,6 +22,9 @@ export default {
     return {
       meta: this.defaultValues()
     }
+  },
+  components: {
+    DateInput
   },
   methods: {
     updateUrl: _.debounce(function () {
