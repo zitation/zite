@@ -2,7 +2,7 @@
   <form class='Website' @submit="submitCitation()">
     <input v-model="meta.url" v-on:input="updateUrl" placeholder="URL" required>
     <input v-model="meta.title" placeholder="Title" required>
-    <input v-model="meta.author" placeholder="Author" required>
+    <input v-model="meta.author[0].name" placeholder="Author" required>
     <div class="dates">
       <label class="date">
         <span>Accessed</span>
@@ -46,7 +46,7 @@ export default {
       return {
         url: '',
         title: '',
-        author: '',
+        author: [{'name': ''}],
         date_published: '',
         date_accessed: new Date().toISOString().slice(0, 10)
       }

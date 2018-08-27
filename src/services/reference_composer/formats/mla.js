@@ -21,20 +21,20 @@ export default {
 
       var dateAccessed = getDateComponentsFromString(meta.date_accessed)
 
-      return `${meta.author}. ${meta.title}. ${meta.url}. Accessed ${dateAccessed.date} ${dateAccessed.monthName}, ${dateAccessed.year}, from ${meta.url}`
+      return `${meta.author[0].name}. ${meta.title}. ${meta.url}. Accessed ${dateAccessed.date} ${dateAccessed.monthName}, ${dateAccessed.year}, from ${meta.url}`
     },
     book: function (meta) {
       var datePublished = getDateComponentsFromString(meta.date_published)
 
-      return `${meta.author}. (${datePublished.year}). ${meta.title}. ${meta.location}: ${meta.publisher}`
+      return `${meta.author[0].name}. (${datePublished.year}). ${meta.title}. ${meta.location}: ${meta.publisher}`
     }
   },
   inText: {
     website: function (meta) {
-      return `("${meta.author}")`
+      return `("${meta.author[0].name}")`
     },
     book: function (meta) {
-      return `("${meta.author}")`
+      return `("${meta.author[0].name}")`
     }
   }
 }
