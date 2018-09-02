@@ -9,7 +9,7 @@ module.exports = {
       const bibjson = {
         'type': meta['og:type'],
         'title': meta['title'] || meta['og:title'],
-        'author': {'name': meta['author'] || meta['article:author'] || meta['og:article:author']},
+        'author': [{'name': meta['author'] || meta['article:author'] || meta['og:article:author']}],
         'year': date.getFullYear(),
         'month': date.getMonth(),
         'date': date.getDate()
