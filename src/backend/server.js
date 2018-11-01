@@ -1,7 +1,6 @@
 module.exports = function (app) {
   const bodyParser = require('body-parser')
   const cors = require('cors')
-  const urlMetadata = require('url-metadata')
   const meta_scrape = require('./meta/scrape.js')
 
   app.use(bodyParser.json())
