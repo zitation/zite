@@ -1,7 +1,7 @@
 module.exports = function (app) {
   const bodyParser = require('body-parser')
   const cors = require('cors')
-  const meta_scrape = require('./meta/scrape.js')
+  const metaScrape = require('./meta/scrape.js')
 
   app.use(bodyParser.json())
   app.use(cors())
@@ -11,13 +11,11 @@ module.exports = function (app) {
 
     if (url) {
       if (url === 'test') {
-        const test_values = require('./meta/test_values.js')
-        response.json(test_values)
-      }
-      else {
-        meta_scrape.get(url, response)
+        const testValues = require('./meta/test_values.js')
+        response.json(testValues)
+      } else {
+        metaScrape.get(url, response)
       }
     }
   })
 }
-
