@@ -10,12 +10,7 @@ module.exports = function (app) {
     const url = request.body.url
 
     if (url) {
-      if (url === 'test') {
-        const testValues = require('./meta/test_values.js')
-        response.json(testValues)
-      } else {
-        metaScrape.get(url, response)
-      }
+      metaScrape.get(url, response)
     }
   })
 }
