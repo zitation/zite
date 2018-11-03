@@ -15,13 +15,6 @@ module.exports = {
           'date': date.getDate()
         }
 
-        if (process.env.NODE_ENV === '"development"') {
-          console.log('> bibjson')
-          console.log(bibjson)
-          console.log('> meta')
-          console.log(meta)
-        }
-
         response.json(bibjson)
       },
       function (error) {
