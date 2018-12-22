@@ -26,10 +26,11 @@ export default {
 }
 
 .date span {
-  margin: 1em;
+  margin-left: 1em;
+  line-height: 2em;
 }
 
 .date input[type='date'] {
-  line-height: 1.5em;
+  line-height: 1.75em;
 }
 </style>
