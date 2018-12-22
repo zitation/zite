@@ -14,9 +14,7 @@ export default {
 <style>
   body {
     font-family: 'Lato', sans-serif;
-
-    width: 80%;
-    margin: 1em auto;
+    margin: 0 auto;
     color: #fcf7ff;
     background: linear-gradient(to bottom right, #8db38b, #04724d);
     background-size: auto;
