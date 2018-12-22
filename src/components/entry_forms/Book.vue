@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import DateInput from '@/components/forms/DateInput'
+import DateInput from '@/components/DateInput'
 
 export default {
   data () {

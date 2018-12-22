@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import DateInput from '@/components/forms/DateInput'
+import DateInput from '@/components/DateInput'
 import { mapActions } from 'vuex'
 import MetaFetch from '@/api/meta_fetch.js'
 import _ from 'lodash'
