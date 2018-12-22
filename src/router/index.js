@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import MainLayout from '@/pages/layouts/Main'
+import MainTemplate from '@/pages/templates/Main'
 import Home from '@/pages/Home'
 import Add from '@/pages/Add'
 import View from '@/pages/View'
@@ -12,7 +12,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: MainLayout,
+      component: MainTemplate,
       children: [
         {
           path: '/',
