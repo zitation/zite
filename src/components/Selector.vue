@@ -47,6 +47,7 @@ export default {
 <style>
 .selector{
   text-align: center;
+  line-height: 1.75em;
   display: inline-block;
   color: #fcf7ff;
   background-color: rgba(0, 0, 0, 0);
@@ -60,11 +61,6 @@ export default {
   box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.125);
 }
 
-select option {
-  padding: 0.4em 2em;
-  margin: 0;
-}
-
 .tabbed {
   border-width: 0.3em;
 }
@@ -72,7 +68,8 @@ select option {
 .tabbed span {
   display: inline-block;
   font-size: 0.8em;
-  padding: 0.50em 2em;
+  line-height: 1.5em;
+  padding: 0.5em 2em;
   margin: 0;
 }
 
