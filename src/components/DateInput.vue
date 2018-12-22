@@ -26,7 +26,6 @@ export default {
 }
 
 .date span {
-  margin-left: 1em;
   margin: 1em;
 }
 
