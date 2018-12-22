@@ -16,6 +16,7 @@ export default {
 <style>
 .button-component {
   text-align: center;
+  line-height: 1.75em;
   color: #fcf7ff;
   background-color: rgba(0, 0, 0, 0);
   border: 0.35em solid #fcf7ff;
