@@ -18,7 +18,7 @@ import BookForm from '@/components/entry_forms/Book'
 export default {
   data () {
     return {
-      types: ['Website', 'Book'], // 'Journal', 'Media', 'Other'],
+      types: ['Website', 'Book', 'Journal', 'Media', 'Other'],
       type: 'Website'
     }
   },
