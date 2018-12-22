@@ -12,8 +12,8 @@
 <script>
 import Button from '@/components/Button'
 import Selector from '@/components/Selector'
-import WebsiteForm from '@/components/entry_forms/Website'
-import BookForm from '@/components/entry_forms/Book'
+import WebsiteForm from '@/components/forms/Website'
+import BookForm from '@/components/forms/Book'
 
 export default {
   data () {
