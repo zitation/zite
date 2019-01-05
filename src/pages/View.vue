@@ -6,12 +6,13 @@
     <Selector v-on:selectionChange='formatSelectionChange($event)' class='type' v-bind:options='formats'/>
     </Selector>
     <ul id='citation-list' v-if='references.length > 0'>
-      <li v-for='(citation, index) in references' v-bind:key='index'>
-        <p>{{composeCitation(citation, {"format": format, "type": "citation"})}}</p>
-        <Button dangerous @click.native='removeCitation(index)'>✖ Remove</Button>
-
-        <Button class='export-single' v-clipboard:copy='composeCitation(citation, {"format": format, "type": "citation"})'>⎘ Copy</Button>
-        <Button class='export-single' v-clipboard:copy='composeCitation(citation, {"format": format, "type": "inText"})'>⎘ In-text</Button>
+      <li class='citation' v-for='(citation, index) in references' v-bind:key='index'>
+        <p class='content'>{{composeCitation(citation, {"format": format, "type": "citation"})}}</p>
+        <div class='actions'>
+          <Button dangerous @click.native='removeCitation(index)'>✖ Remove</Button>
+          <Button class='export-single' v-clipboard:copy='composeCitation(citation, {"format": format, "type": "citation"})'>⎘ Copy</Button>
+          <Button class='export-single' v-clipboard:copy='composeCitation(citation, {"format": format, "type": "inText"})'>⎘ In-text</Button>
+        </div>
       </li>
     </ul>
     <p v-else>Add citations by clicking the 'Add New Citation' button.</p>
@@ -68,7 +69,7 @@ export default {
   margin: 0;
 }
 
-#citation-list li {
+#citation-list .citation {
   padding: 0.75em 1em 1em;
   margin: 0 0 0.5em;
   border-radius: 1em;
@@ -76,12 +77,12 @@ export default {
   transition-duration: 0.25s;
 }
 
-#citation-list p {
+#citation-list .citation .content {
   padding: 0;
   margin: 0 0 0.5em;
 }
 
-#citation-list li Button {
+#citation-list .citation .actions Button {
   opacity: 0;
   margin: 0 0.5em 0 0;
   padding: 0.35em 0.8em;
@@ -89,16 +90,16 @@ export default {
   transition-duration: 0.25s;
 }
 
-#citation-list li Button.export-single {
+#citation-list .citation .actions Button.export-single {
   float: right;
   margin: 0 0 0 0.5em;
 }
 
-#citation-list li:hover Button {
+#citation-list .citation:hover .actions Button {
   opacity: 1;
 }
 
-#citation-list li:hover{
+#citation-list .citation:hover{
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.125);
 }
