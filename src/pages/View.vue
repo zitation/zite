@@ -72,7 +72,7 @@ export default {
   padding: 1em;
   border-radius: 1em;
   box-shadow: none;
-  transition-duration: 0.5s;
+  transition-duration: 0.25s;
 }
 
 #citation-list p {
