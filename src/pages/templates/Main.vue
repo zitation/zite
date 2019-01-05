@@ -8,7 +8,6 @@
         </ul>
       </nav>
     </header>
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Allan|Lato">
     <div id="page_content">
       <router-view/>
     </div>
