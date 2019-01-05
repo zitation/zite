@@ -5,12 +5,13 @@
     <input v-model="meta.location" placeholder="Place of Publication" required>
     <input v-model="meta.publisher" placeholder="Publisher" required>
     <DateInput title='Published' v-model='meta.date_published'></DateInput>
-    <input type="submit" value="Add" required>
+    <Button><input class='submit' type="submit" value="Add" required></Button>
   </form>
 </template>
 
 <script>
 import DateInput from '@/components/DateInput'
+import Button from '@/components/Button'
 
 export default {
   data () {
@@ -19,7 +20,8 @@ export default {
     }
   },
   components: {
-    DateInput
+    DateInput,
+    Button
   },
   methods: {
     defaultValues () {

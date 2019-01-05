@@ -41,7 +41,7 @@ export default {
   padding: 1em 0;
 }
 
-.add input {
+.add input:not([type='submit']) {
   font-weight: bold;
 
   border-radius: 2em;
@@ -58,13 +58,9 @@ export default {
 }
 
 .add input[type='submit'] {
-  display: block;
-  color: #fcf7ff;
-  padding: 0.5em;
-  margin-top: 0.5em;
-  background: rgba(0, 0, 0, 0);
-  border: 0.25em solid #fcf7ff;
-  width: 33%;
+  border: none;
+  background: none;
+  color: #fff;
 }
 
 Button.view {

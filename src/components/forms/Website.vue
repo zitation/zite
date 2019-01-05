@@ -7,12 +7,13 @@
       <DateInput title='Accessed' v-model='meta.date_accessed'></DateInput>
       <DateInput title='Published' v-model='meta.date_published'></DateInput>
     </div>
-    <input type="submit" value="Add" required>
+    <Button><input type="submit" value="Add" required></Button>
   </form>
 </template>
 
 <script>
 import DateInput from '@/components/DateInput'
+import Button from '@/components/Button'
 import { mapActions } from 'vuex'
 import MetaFetch from '@/api/meta_fetch.js'
 import _ from 'lodash'
@@ -24,7 +25,8 @@ export default {
     }
   },
   components: {
-    DateInput
+    DateInput,
+    Button
   },
   methods: {
     updateUrl: _.debounce(function () {
