@@ -30,7 +30,7 @@ export default {
 
   header {
     padding: 1em 3em;
-    margin: 0 0 2em;
+    margin: 0 0 5em;
     min-height: 3em;
     background-color: #fcf7ff;
     color: #8db38b;
