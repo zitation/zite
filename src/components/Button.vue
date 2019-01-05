@@ -19,7 +19,7 @@ export default {
   line-height: 1.75em;
   color: #fcf7ff;
   background-color: rgba(0, 0, 0, 0);
-  border: 0.35em solid #fcf7ff;
+  border: 0.25em solid #fcf7ff;
   margin: 0 0.25em 1em;
   padding: 0.5em 1.5em;
   border-radius: 2em;

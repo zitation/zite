@@ -62,7 +62,7 @@ export default {
 }
 
 .tabbed {
-  border-width: 0.3em;
+  border-width: 0.2em;
 }
 
 .tabbed span {
