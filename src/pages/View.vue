@@ -69,7 +69,8 @@ export default {
 }
 
 #citation-list li {
-  padding: 1em;
+  padding: 0.75em 1em 1em;
+  margin: 0 0 0.5em;
   border-radius: 1em;
   box-shadow: none;
   transition-duration: 0.25s;
@@ -90,6 +91,7 @@ export default {
 
 #citation-list li Button.export-single {
   float: right;
+  margin: 0 0 0 0.5em;
 }
 
 #citation-list li:hover Button {
