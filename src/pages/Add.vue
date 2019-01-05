@@ -1,7 +1,7 @@
 <template>
   <div class="add">
     <h1>Add Citation</h1>
-    <Selector tabbed v-bind:options="types" @selectionChange="handleTypeChange($event)"/>
+    <Selector v-bind:options="types" @selectionChange="handleTypeChange($event)"/>
     <a href='/#/view' ref='next'><Button class='view'>View All 🡺</Button></a>
     <WebsiteForm v-if="type === 'Website'"/>
     <BookForm v-else-if="type === 'Book'"/>

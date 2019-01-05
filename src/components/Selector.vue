@@ -1,5 +1,5 @@
 <template>
-  <div v-if='tabbed' class='tabbed selector'>
+  <div class='selector'>
     <span
       v-for='(option, index) in options'
       v-bind:key='index'
@@ -10,16 +10,6 @@
       {{option}}
     </span>
   </div>
-  <select v-else class='selector'>
-    <option
-      v-for='(option, index) in options'
-      v-bind:key='index'
-      v-bind:value='option'
-      v-on:click='selection=option'
-    >
-      {{option}}
-    </option>
-  </select>
 </template>
 
 <script>
@@ -30,8 +20,7 @@ export default {
     }
   },
   props: {
-    options: Array,
-    tabbed: Boolean
+    options: Array
   },
   watch: {
     selection: {
@@ -51,7 +40,7 @@ export default {
   display: inline-block;
   color: #fcf7ff;
   background-color: rgba(0, 0, 0, 0);
-  border: 0.35em solid #fcf7ff;
+  border: 0.2em solid #fcf7ff;
   border-radius: 2em;
   
   /* remove default arrow on dropdown select */
@@ -61,11 +50,7 @@ export default {
   box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.125);
 }
 
-.tabbed {
-  border-width: 0.2em;
-}
-
-.tabbed span {
+.selector span {
   display: inline-block;
   font-size: 0.8em;
   line-height: 1.5em;
@@ -73,19 +58,19 @@ export default {
   margin: 0;
 }
 
-.tabbed span:first-child {
+.selector span:first-child {
   border-right: none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.tabbed span:not(:first-child):not(:last-child) {
+.selector span:not(:first-child):not(:last-child) {
   border-left: none;
   border-right: none;
   border-radius: 0;
 }
 
-.tabbed span:last-child {
+.selector span:last-child {
   border-left: none;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
