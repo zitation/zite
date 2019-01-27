@@ -7,7 +7,7 @@
       <DateInput title='Accessed' v-model='meta.date_accessed'></DateInput>
       <DateInput title='Published' v-model='meta.date_published'></DateInput>
     </div>
-    <Button><input type="submit" value="Add" required></Button>
+    <Button class="submit"><input type="submit" value="Add" required></Button>
   </form>
 </template>
 

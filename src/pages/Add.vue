@@ -63,6 +63,11 @@ export default {
   color: #fff;
 }
 
+.add Button.submit {
+  float: right;
+  min-width: 15em;
+}
+
 Button.view {
   float: right;
   margin-right: 0;
