@@ -77,6 +77,22 @@ export default {
     margin: 0 0 0.5em;
   }
 
+  p {
+    font-size: 1.15em;
+  }
+
+  a {
+    color: #8db38b;
+  }
+
+  blockquote {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 1em;
+    background-color: #8db38b;
+    border-radius: 1em;
+  }
+
   footer {
     padding: 1em 3em;
   }
