@@ -5,7 +5,10 @@
     <input v-model="meta.location" placeholder="Place of Publication" required>
     <input v-model="meta.publisher" placeholder="Publisher" required>
     <DateInput title='Published' v-model='meta.date_published'></DateInput>
-    <Button class="submit"><input type="submit" value="Add" required></Button>
+    <div class="actions">
+      <Button><input type="reset" value="Clear"></Button>
+      <Button class="submit"><input type="submit" value="Add" required></Button>
+    </div>
   </form>
 </template>
 

@@ -41,7 +41,7 @@ export default {
   padding: 1em 0;
 }
 
-.add input:not([type='submit']) {
+.add input:not([type='submit']):not([type='reset']) {
   font-weight: bold;
 
   border-radius: 2em;
@@ -57,16 +57,23 @@ export default {
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
-.add input[type='submit'] {
+.actions {
+  width: 100%;
+  display: block;
+}
+
+.actions input {
   border: none;
   background: none;
   color: #fff;
 }
 
-.add Button.submit {
-  float: right;
+.actions Button {
   min-width: 15em;
-  margin-left: 100%;
+}
+
+.actions Button.submit {
+   float: right;
 }
 
 Button.view {
