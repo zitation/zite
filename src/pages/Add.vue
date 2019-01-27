@@ -66,6 +66,7 @@ export default {
 .add Button.submit {
   float: right;
   min-width: 15em;
+  margin-left: 100%;
 }
 
 Button.view {
